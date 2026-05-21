@@ -1,15 +1,12 @@
 name: Doctor Backend CD
 
 on:
-  workflow_run:
-    workflows: ["Doctor Backend CI/CD"]
-    types:
-      - completed
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-
     runs-on: ubuntu-latest
 
     steps:
