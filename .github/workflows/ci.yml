@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker Image
-        run: docker build -t archit2400/doctor-backend .
+        run: docker build -t archit2400/doctor-backend:latest .
 
       - name: Push Docker Image
-        run: docker push archit2400/doctor-backend
+        run: docker push archit2400/doctor-backend:latest
